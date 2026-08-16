@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ferretería</title>
+    <style>
+        #caja { border: 2px solid green; padding: 20px; width: 220px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div id="caja">
+        <h3>Control de Stock</h3>
+        <input type="number" id="inputStock" placeholder="Ingrese stock">
+        <button onclick="validarStock()">Verificar</button>
+    </div>
+
+    <script>
+        function validarStock() {
+            let val = parseInt(document.getElementById("inputStock").value);
+            let caja = document.getElementById("caja");
+            if(val < 5) {
+                caja.style.borderColor = "red";
+            } else {
+                caja.style.borderColor = "green";
+            }
+        }
+    </script>
+</body>
+</html>
