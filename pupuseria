@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pupusería</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        table, th, td { border: 1px solid #333; border-collapse: collapse; padding: 8px; margin-top: 15px; }
+    </style>
+</head>
+<body>
+    <h2>Registro de Venta - Pupusería</h2>
+    <input type="text" id="nombre" placeholder="Nombre producto">
+    <input type="number" id="cantidad" placeholder="Cantidad">
+    <input type="number" id="precio" placeholder="Precio ($)" step="0.01">
+    <button onclick="agregar()">Agregar a Tabla</button>
+
+    <table id="tabla">
+        <tr>
+            <th>Nombre</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+        </tr>
+    </table>
+
+    <script>
+        function agregar() {
+            let nom = document.getElementById("nombre").value;
+            let cant = document.getElementById("cantidad").value;
+            let prec = document.getElementById("precio").value;
+
+            if(nom && cant && prec) {
+                let tabla = document.getElementById("tabla");
+                let fila = tabla.insertRow();
+                fila.insertCell(0).innerText = nom;
+                fila.insertCell(1).innerText = cant;
+                fila.insertCell(2).innerText = "$" + prec;
+            }
+        }
+    </script>
+</body>
+</html>
