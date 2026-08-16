@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda Abarrotes</title>
+</head>
+<body>
+    <h2>Lista de Productos</h2>
+    <ul>
+        <li class="prod" data-venc="Julio 2026">Arroz - Julio 2026</li>
+        <li class="prod" data-venc="Agosto 2026">Leche - Agosto 2026</li>
+        <li class="prod" data-venc="Septiembre 2026">Avena - Septiembre 2026</li>
+    </ul>
+    <button onclick="verificarVencimiento()">Revisar Vencimiento</button>
+
+    <script>
+        function verificarVencimiento() {
+            let elementos = document.querySelectorAll(".prod");
+            elementos.forEach(el => {
+                if(el.getAttribute("data-venc") === "Agosto 2026") {
+                    el.style.backgroundColor = "red";
+                    el.style.color = "white";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
